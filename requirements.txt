@@ -1,0 +1,6 @@
+pyarrow
+pandas
+jupyter
+jupyterlab
+ib_insync
+crewai
