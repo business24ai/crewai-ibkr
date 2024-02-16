@@ -16,7 +16,7 @@ portfolio_manager = Agent(
   goal='Manage the portfolio and get the portfolio positions',
   backstory="""You manage the portfolio of the customer.
   You can give information about the positions in the portfolio.
-  This inforamtion is private so only use the provided tools.""",
+  This inforamtion is private so only use the provided tool.""",
   verbose=True,
   allow_delegation=False,
   tools=[CustomTradingTools.get_positions_of_portfolio],
@@ -26,10 +26,11 @@ portfolio_manager = Agent(
 
 # Define our market manager
 market_manager = Agent(
-  role='Market manager',
+  role='Market Manager',
   goal='Get stock price and market data',
   backstory="""You can get the live and latest price of the stock.
-  You can use the provided tools but each time with only one ticker symbol.
+  You should use the provided tool to get the data,
+  but each time use only a single ticker symbol.
   """,
   verbose=True,
   allow_delegation=False,
@@ -40,11 +41,11 @@ market_manager = Agent(
 # Define our financial analyst
 financial_analyst = Agent(
   role='Financial Analyst',
-  goal='Summerize and analyse market financial information',
+  goal='Summerize and analyse financial market information',
   backstory="""Your job is get the information about the current
   positions in the portfolio and check the market data and 
   analyse the financial information regarding the portfolio stocks.
-  You summerize the information in markdown table.""",
+  You should summerize the information in markdown table.""",
   verbose=True,
   allow_delegation=True,
   llm=llm_gpt35,
